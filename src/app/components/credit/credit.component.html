@@ -1,0 +1,30 @@
+<!-- <div>
+    <label>{{ credit.id }}</label>
+    <br>
+    <label>{{ credit.amount }}</label>
+    <br>
+    <label>{{ credit.approvement }}</label>
+    <a href (click)="approveCredit()">Aprovar</a>
+    <a href (click)="getClientAnalyzers()">Ver analizadores</a>
+</div> -->
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{ credit.id }}</h4>
+        <p class="card-text">
+          <strong><label>Amount:</label></strong>
+          <label>{{ credit.amount }}</label>
+          <br>
+          <strong><label>Approvement:</label></strong>
+          <label>{{ credit.approvement }}</label>
+        </p>
+        <a href="#" class="card-link" (click)="approveCredit()">Aprovar</a>
+        <a *ngIf="!watchAnalyzers" href="#" class="card-link" (click)="getClientAnalyzers()">Ver analizadores</a>
+        <a *ngIf="watchAnalyzers" href="#" class="card-link" (click)="dismissAnalyzers()">Ya no ver analizadores</a>
+    </div>
+</div>
+
+<div *ngIf="watchAnalyzers">
+    <app-client-analyzers [clientAnalyzers]="clientAnalyzers"></app-client-analyzers>
+</div>
+

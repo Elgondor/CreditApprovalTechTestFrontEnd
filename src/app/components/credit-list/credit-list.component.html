@@ -1,0 +1,19 @@
+
+
+<!-- <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Amount</th>
+        <th>Approvement</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let credit of creditList">
+          <td></app-credit></td>
+      </tr>
+    </tbody>
+</table> -->
+
+<app-credit *ngFor="let credit of creditList" [credit]="credit"></app-credit>
