@@ -14,32 +14,13 @@ export class CreditApprovalsService {
   getAll(): Observable<any> {
     return this.http.get(baseUrl + 'credits/');
   }
-
-  // get(id): Observable<any> {
-  //   return this.http.get(`${baseUrl}/${id}`);
-  // }
+  
   getClientAnalyzers(id:number): Observable<any> {
     console.log(`${baseUrl}get_client_profile/${id}`);
     return this.http.get(`${baseUrl}get_client_profile/${id}`);
   }
 
-  // create(data): Observable<any> {
-  //   return this.http.post(baseUrl, data);
-  // }
-
   update(id:number, data:any): Observable<any> {
     return this.http.put(`${baseUrl}credit_approval/${id}`, data);
   }
-
-  // delete(id): Observable<any> {
-  //   return this.http.delete(`${baseUrl}/${id}`);
-  // }
-
-  // deleteAll(): Observable<any> {
-  //   return this.http.delete(baseUrl);
-  // }
-
-  // findByTitle(title): Observable<any> {
-  //   return this.http.get(`${baseUrl}?title=${title}`);
-  // }
 }

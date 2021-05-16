@@ -21,25 +21,27 @@ export class CreditComponent implements OnInit {
     
   }
 
-  approveCredit():void{
+  approveCredit():boolean{
     const data = {
       approvement: true
     };
     this.creditApprovalsService.update(this.credit.id, data).subscribe(
       res => {
         console.log(res);
+        window.location.reload();
       },
       error => {
         console.log(error);
       }
     );
+
+    return false;
   }
 
   getClientAnalyzers():boolean{
-    this.creditApprovalsService.getClientAnalyzers(1).subscribe(
+    this.creditApprovalsService.getClientAnalyzers(this.credit.client).subscribe(
       res => {
         this.clientAnalyzers = res;
-        console.log(res);
         this.watchAnalyzers = true;
       }
     );

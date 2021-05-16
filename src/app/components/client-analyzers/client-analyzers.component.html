@@ -2,21 +2,17 @@
     <div class="card-body">
         <h4 class="card-title">Analizadores del cliente</h4>
         <p class="card-text">
-          <strong><label>Client:</label></strong>
-          <label>{{ clientAnalyzers.id }}</label>
+          <strong><label>Client: </label></strong>
+          <label>{{ clientAnalyzers.name }}</label>
           <br>
-          <strong><label>SBS_debt:</label></strong>
+          <strong><label>SBS_debt: </label></strong>
           <label>{{ clientAnalyzers.SBS_debt }}</label>
           <br>
-          <strong><label>Client score:</label></strong>
-          <label>{{ clientAnalyzers.client_score }}</label>
-          <br>
-          <strong><label>Sentinel score:</label></strong>
+          <strong><label>Sentinel score: </label></strong>
           <label>{{ clientAnalyzers.sentinel_score }}</label>
           <br>
-          <strong><label>AI Algorithm:</label></strong>
+          <strong><label>AI Algorithm: </label></strong>
           <label>{{ clientAnalyzers.ai_algorithm }}</label>
         </p>
-        <a href="#" class="card-link" (click)="approveCredit()">Aprovar</a>
     </div>
 </div>
